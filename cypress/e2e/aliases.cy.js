@@ -25,7 +25,7 @@ describe('Cypress aliasing', () => {
       .and('contain', 'Changed')
   })
 
-  it('aliases an an intercept and waits for it', () => {
+  it('aliases an intercept and waits for it', () => {
     cy.intercept('GET', '**/comments/*').as('getComment')
     
     cy.get('.network-btn').click()
