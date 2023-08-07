@@ -6,8 +6,12 @@ describe('Cypress aliasing', () => {
       .as('headingText')
   })
 
-  it('accesses the text invoked in the beforeEach hook', function() {
+  it('accesses the text invoked in the beforeEach hook using `this`', function() {
     expect(this.headingText).to.equal('Aliasing')
+  })
+
+  it('accesses the text invoked in the beforeEach hook using `cy.get("@alias")`', () => {
+    cy.get('@headingText').should('be.equal', 'Aliasing')
   })
 
   it('aliases an html element for later usage', () => {
