@@ -35,7 +35,7 @@ describe('Cypress aliasing', () => {
       .should('eq', 200)
   })
 
-  it('aliases a request and make assertions on its response', () => {
+  it('aliases a request and makes assertions on its response', () => {
     cy.request('https://jsonplaceholder.cypress.io/comments')
       .as('getComments')
 
@@ -48,7 +48,7 @@ describe('Cypress aliasing', () => {
     })
   })
 
-  it('aliases a `cy.exec` and make an assertion on its stdout', () => {
+  it('aliases a `cy.exec` and makes an assertion on its stdout', () => {
     cy.exec('curl https://jsonplaceholder.cypress.io/comments')
       .as('myCmd')
 
