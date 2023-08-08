@@ -66,9 +66,9 @@ describe('Cypress aliasing', () => {
   })
 
   it('aliases a `cy.task` and makes an assertion on its return value', () => {
-    cy.task('bark').as('myTask')
+    cy.task('bark').as('barkTask')
 
-    cy.get('@myTask').should('be.equal', 'Au au!')
+    cy.get('@barkTask').should('be.equal', 'Au au!')
   })
 
   it('aliases a fixture and makes an assertion on its content', () => {
