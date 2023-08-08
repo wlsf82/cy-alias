@@ -30,7 +30,8 @@ describe('Cypress aliasing', () => {
   })
 
   it('aliases an intercept and waits for it', () => {
-    cy.intercept('GET', '**/comments/*').as('getComment')
+    cy.intercept('GET', '**/comments/*')
+      .as('getComment')
     
     cy.get('.network-btn').click()
 
