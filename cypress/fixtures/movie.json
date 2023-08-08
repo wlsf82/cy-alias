@@ -1,0 +1,12 @@
+{
+  "title": "Alien",
+  "protagonist": "Sigourney Weaver",
+  "year": 1979,
+  "director": "Ridley Scott",
+  "genre": [
+    "horror",
+    "science fiction",
+    "thriller"
+  ],
+  "sinopse": "A crew investigates an SOS on a remote planet and makes a scary discovery."
+}

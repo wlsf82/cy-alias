@@ -69,4 +69,34 @@ describe('Cypress aliasing', () => {
 
     cy.get('@myTask').should('be.equal', 'Au au!')
   })
+
+  it('aliases a fixture and makes an assertion on its content', () => {
+    cy.fixture('movie').as('movie')
+
+    cy.get('@movie').should('have.property', 'year')
+  })
+
+  it('aliases a fixture and makes assertions on specific values', () => {
+    cy.fixture('movie').as('movie')
+
+    cy.get('@movie').then(({
+      title,
+      protagonist,
+      year,
+      director,
+      genre
+    }) => {
+      expect(title).to.equal('Alien')
+      expect(protagonist).to.equal('Sigourney Weaver')
+      expect(year).to.equal(1979)
+      expect(director).to.equal('Ridley Scott')
+      expect(genre.length).to.equal(3)
+    })
+  })
+
+  it('aliases a `cy.readFile` and makes an assertion on its content', () => {
+    cy.readFile('cypress/fixtures/movie.json').as('alienMovie')
+
+    cy.get('@alienMovie').should('have.property', 'sinopse')
+  })
 })
