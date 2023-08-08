@@ -55,13 +55,13 @@ describe('Cypress aliasing', () => {
 
   it('aliases a `cy.exec` and makes an assertion on its stdout', () => {
     cy.exec('curl https://jsonplaceholder.cypress.io/comments')
-      .as('myCmd')
+      .as('commentsResult')
 
-    cy.get('@myCmd')
+    cy.get('@commentsResult')
       .its('stdout')
-      .then(myCmd => {
-        myCmd = JSON.parse(myCmd)
-        expect(myCmd).to.have.length(500)
+      .then(result => {
+        result = JSON.parse(result)
+        expect(result).to.have.length(500)
       })
   })
 
