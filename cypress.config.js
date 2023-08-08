@@ -1,8 +1,7 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   e2e: {
-    fixturesFolder: false,
     setupNodeEvents(on, config) {
       on('task', {
         bark() {
@@ -13,4 +12,4 @@ module.exports = defineConfig({
     },
     supportFile: false,
   },
-});
+})
