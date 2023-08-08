@@ -78,9 +78,9 @@ describe('Cypress aliasing', () => {
   })
 
   it('aliases a fixture and makes assertions on specific values', () => {
-    cy.fixture('movie').as('movie')
+    cy.fixture('movie').as('alienMovie')
 
-    cy.get('@movie').then(({
+    cy.get('@alienMovie').then(({
       title,
       protagonist,
       year,
@@ -96,8 +96,8 @@ describe('Cypress aliasing', () => {
   })
 
   it('aliases a `cy.readFile` and makes an assertion on its content', () => {
-    cy.readFile('cypress/fixtures/movie.json').as('alienMovie')
+    cy.readFile('cypress/fixtures/movie.json').as('movieFile')
 
-    cy.get('@alienMovie').should('have.property', 'sinopse')
+    cy.get('@movieFile').should('have.property', 'sinopse')
   })
 })
